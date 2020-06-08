@@ -1,0 +1,7 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  Exclude:
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - '.gitignore'
+    - 'readme.md'
