@@ -6,7 +6,7 @@ require_relative '../modules/data_validation'
 # Order class contains data about ordered books and readers
 class Order
   include DataValidation
-  attr_accessor :book, :reader, :date
+  attr_reader :book, :reader, :date
 
   def initialize(book, reader, date = Date.today)
     compare_classes Book, book.class

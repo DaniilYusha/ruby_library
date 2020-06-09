@@ -5,7 +5,7 @@ require_relative '../modules/data_validation'
 # Author class contains author name and biography
 class Author
   include DataValidation
-  attr_accessor :name, :biography
+  attr_reader :name, :biography
 
   def initialize(name, biography = '')
     @name = check_empty_s name

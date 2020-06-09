@@ -5,7 +5,7 @@ require_relative '../modules/data_validation'
 # Book class contains titles, authors and readers of each book
 class Book
   include DataValidation
-  attr_accessor :title, :author, :readers
+  attr_reader :title, :author, :readers
 
   def initialize(title, author)
     compare_classes Author, author.class

@@ -5,7 +5,7 @@ require_relative '../modules/data_validation'
 # Reader class contatins all data about readers who want to buy a book
 class Reader
   include DataValidation
-  attr_accessor :name, :email, :city, :street, :house, :books
+  attr_reader :name, :email, :city, :street, :house, :books
 
   def initialize(name, email, city, street, house)
     @name = check_empty_s name
