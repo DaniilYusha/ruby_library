@@ -14,8 +14,7 @@ module DataValidation
   end
 
   def check_empty_s(string)
-    string = String string
-    raise ArgumentError, 'String is empty or contains only whitespaces' if string.empty? || string.match?(/^\s+$/)
+    raise ArgumentError, 'Argument should be String and not empty' if !string.is_a?(String) || string.strip.empty?
 
     string
   end
