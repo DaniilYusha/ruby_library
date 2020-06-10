@@ -7,8 +7,7 @@ module DataValidation
   end
 
   def check_positive_num(num)
-    num = Integer num
-    raise ArgumentError, 'Number is not positive or equal 0' unless num >= 1
+    raise ArgumentError, 'Argument should be a Number and not positive or equal 0' unless num.is_a?(Integer) && num >= 1
 
     num
   end
