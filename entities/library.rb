@@ -18,7 +18,9 @@ class Library
 
   def add_entities(*entities)
     entities.each do |item|
-      @entities << item unless @entities.any? { |ent| ent == item }
+      if item.is_a?(Author) || item.is_a?(Book) || item.is_a?(Order) || item.is_a?(Reader)
+        @entities << item unless @entities.any? { |ent| ent == item }
+      end
     end
   end
 
