@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Module DataValidation contains methods for data validation
-module DataValidation
+module Validator
   def compare_classes(class_name, expected_class)
     raise ArgumentError, "Expected class #{class_name}" unless class_name == expected_class
   end

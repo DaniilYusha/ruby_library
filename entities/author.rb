@@ -2,7 +2,7 @@
 
 # Author class contains author name and biography
 class Author
-  include DataValidation
+  include Validator
   attr_reader :name, :biography
 
   def initialize(name, biography = '')

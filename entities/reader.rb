@@ -2,7 +2,7 @@
 
 # Reader class contatins all data about readers who want to buy a book
 class Reader
-  include DataValidation
+  include Validator
   attr_reader :name, :email, :city, :street, :house, :books
 
   def initialize(name, email, city, street, house)

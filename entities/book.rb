@@ -2,7 +2,7 @@
 
 # Book class contains titles, authors and readers of each book
 class Book
-  include DataValidation
+  include Validator
   attr_reader :title, :author, :readers
 
   def initialize(title, author)

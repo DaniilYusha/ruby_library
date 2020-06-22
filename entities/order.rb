@@ -2,7 +2,7 @@
 
 # Order class contains data about ordered books and readers
 class Order
-  include DataValidation
+  include Validator
   attr_reader :book, :reader, :date
 
   def initialize(book, reader, date = Date.today)
