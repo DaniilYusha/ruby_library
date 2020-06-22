@@ -13,7 +13,6 @@ class Reader
     @city = check_empty_s city
     @street = check_empty_s street
     @house = check_positive_num house
-    @books = []
   end
 
   def ==(other)

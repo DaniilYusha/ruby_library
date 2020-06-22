@@ -16,8 +16,6 @@ class Order
     @book = book
     @reader = reader
     @date = date
-    @book.readers << reader
-    @reader.books << book
   end
 
   def to_s

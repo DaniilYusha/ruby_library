@@ -11,7 +11,6 @@ class Book
     compare_classes Author, author.class
     @title = check_empty_s title
     @author = author
-    @readers = []
   end
 
   def ==(other)
