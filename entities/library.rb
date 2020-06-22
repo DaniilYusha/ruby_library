@@ -1,33 +1,31 @@
 # frozen_string_literal: true
 
 require 'yaml'
+require_relative '../modules/file_loader'
 
 # Library class can containt entities, save and load data about them, execute some statistic methods
 class Library
-  attr_reader :lib_name, :entities
+  include FileLoader
+  attr_reader :authors, :books, :orders, :readers
 
   def initialize
-    @lib_name = 'lib.yaml'
-    @entities = []
-    if File.exist?(File.expand_path(File.dirname(__FILE__) + "/../db/#{lib_name}"))
-      load
-    else
-      File.open(File.dirname(__FILE__) + "/../db/#{lib_name}", 'w')
-    end
+    @authors = []
+    @books = []
+    @orders = []
+    @readers = []
+  end
+
+  def get_entities
+    (@authors + @books + @orders + @readers).flatten
   end
 
   def add_entities(*entities)
-    entities.each do |item|
-      if item.is_a?(Author) || item.is_a?(Book) || item.is_a?(Order) || item.is_a?(Reader)
-        @entities << item unless @entities.any? { |ent| ent == item }
-      end
-    end
-  end
-
-  def store
-    File.open(File.dirname(__FILE__) + "/../db/#{lib_name}", 'w') do |file|
-      @entities.each do |entity|
-        file.write(entity.to_yaml)
+    entities.each do |entity|
+      unless exists_in_lib? entity
+        @authors << entity if entity.is_a? Author
+        @books << entity if entity.is_a? Book
+        @orders << entity if entity.is_a? Order
+        @readers << entity if entity.is_a? Reader
       end
     end
   end
@@ -48,5 +46,11 @@ class Library
 
   def readers_count_of_popular_books(quantity = 3)
     top_books(quantity).flat_map(&:readers).uniq.count
+  end
+
+  private
+
+  def exists_in_lib?(entity)
+    get_entities.any? { |ent| ent == entity }
   end
 end
