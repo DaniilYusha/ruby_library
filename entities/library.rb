@@ -13,6 +13,7 @@ class Library
     @books = []
     @orders = []
     @readers = []
+    load
   end
 
   def get_entities
@@ -30,11 +31,11 @@ class Library
     end
   end
 
-  def load
-    File.open(File.dirname(__FILE__) + "/../db/#{lib_name}", 'r') do |file|
-      @entities = YAML.load_stream(file)
-    end
-  end
+  # def load
+  #   File.open(File.dirname(__FILE__) + "/../db/#{lib_name}", 'r') do |file|
+  #     @entities = YAML.load_stream(file)
+  #   end
+  # end
 
   def top_readers(quantity = 1)
     @entities.select { |entity| entity.is_a? Reader }.max_by(quantity) { |reader| reader.books.uniq.length }
