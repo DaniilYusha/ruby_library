@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'entities/author'
-require_relative 'entities/book'
-require_relative 'entities/library'
-require_relative 'entities/order'
-require_relative 'entities/reader'
+require_relative 'autoloader'
 
 lib = Library.new
-lib.entities.clear
 
 author1 = Author.new('Eknath Easwaran', 'Some interesting facts')
 author2 = Author.new('Elizabeth M.')
@@ -42,19 +37,19 @@ lib.add_entities(author1, author2, author3, author4,
                  reader1, reader2, reader3, reader4, reader5,
                  order1, order2, order3, order4, order5,
                  order6, order7, order8, order9, order10)
-lib.store
-
-puts "Now Library contents #{lib.entities.count} entities."
-puts '~~~~~~~~~~~STATISTICS~~~~~~~~~~~'
-puts 'Top reader:'
-puts lib.top_readers
-puts "\nThree top readers:"
-puts lib.top_readers(3)
-puts "\nMost popular book in the Library:"
-puts lib.top_books
-puts "\nTwo most popular books:"
-puts lib.top_books(2)
-puts "\nNumber of Readers of the Most Popular Book:"
-puts lib.readers_count_of_popular_books(1)
-puts "\nNumber of Readers of three the Most Popular Books:"
-puts lib.readers_count_of_popular_books
+lib.store lib.get_entities
+#
+# puts "Now Library contents #{lib.entities.count} entities."
+# puts '~~~~~~~~~~~STATISTICS~~~~~~~~~~~'
+# puts 'Top reader:'
+# puts lib.top_readers
+# puts "\nThree top readers:"
+# puts lib.top_readers(3)
+# puts "\nMost popular book in the Library:"
+# puts lib.top_books
+# puts "\nTwo most popular books:"
+# puts lib.top_books(2)
+# puts "\nNumber of Readers of the Most Popular Book:"
+# puts lib.readers_count_of_popular_books(1)
+# puts "\nNumber of Readers of three the Most Popular Books:"
+# puts lib.readers_count_of_popular_books

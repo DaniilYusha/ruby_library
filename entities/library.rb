@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'yaml'
-require_relative '../modules/file_loader'
-
 # Library class can containt entities, save and load data about them, execute some statistic methods
 class Library
   include FileLoader
@@ -30,12 +27,6 @@ class Library
       end
     end
   end
-
-  # def load
-  #   File.open(File.dirname(__FILE__) + "/../db/#{lib_name}", 'r') do |file|
-  #     @entities = YAML.load_stream(file)
-  #   end
-  # end
 
   def top_readers(quantity = 1)
     @entities.select { |entity| entity.is_a? Reader }.max_by(quantity) { |reader| reader.books.uniq.length }

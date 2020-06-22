@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../modules/data_validation'
-
 # Book class contains titles, authors and readers of each book
 class Book
   include DataValidation

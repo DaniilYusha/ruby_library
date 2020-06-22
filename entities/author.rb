@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../modules/data_validation'
-
 # Author class contains author name and biography
 class Author
   include DataValidation

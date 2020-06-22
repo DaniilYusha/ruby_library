@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'yaml/store'
-
 module FileLoader
   LIB_FILE_NAME = 'lib.yaml'
 

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../modules/data_validation'
-
 # Reader class contatins all data about readers who want to buy a book
 class Reader
   include DataValidation

@@ -1,8 +1,5 @@
 # frozen_string_literal: true
 
-require 'date'
-require_relative '../modules/data_validation'
-
 # Order class contains data about ordered books and readers
 class Order
   include DataValidation
