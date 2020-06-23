@@ -7,7 +7,9 @@ class Book
 
   def initialize(title, author)
     compare_classes Author, author.class
-    @title = check_empty_s title
+    check_empty_strings title
+    
+    @title = title
     @author = author
   end
 

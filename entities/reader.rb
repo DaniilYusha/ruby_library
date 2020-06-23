@@ -6,10 +6,12 @@ class Reader
   attr_reader :name, :email, :city, :street, :house, :books
 
   def initialize(name, email, city, street, house)
-    @name = check_empty_s name
-    @email = check_empty_s email
-    @city = check_empty_s city
-    @street = check_empty_s street
+    check_empty_strings name, email, city, street
+    
+    @name = name
+    @email = email
+    @city = city
+    @street = street
     @house = check_positive_num house
   end
 

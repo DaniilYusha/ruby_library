@@ -12,9 +12,9 @@ module Validator
     num
   end
 
-  def check_empty_s(string)
-    raise ArgumentError, 'Argument should be String and not empty' if !string.is_a?(String) || string.strip.empty?
-
-    string
+  def check_empty_strings(*strings)
+    strings.each do |string|
+      raise ArgumentError, 'Argument should be String and not empty' if !string.is_a?(String) || string.strip.empty?
+    end
   end
 end

@@ -6,8 +6,10 @@ class Author
   attr_reader :name, :biography
 
   def initialize(name, biography = '')
-    @name = check_empty_s name
-    @biography = String biography
+    check_empty_strings name
+    
+    @name = name
+    @biography = biography
   end
 
   def ==(other)
