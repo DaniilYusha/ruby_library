@@ -3,6 +3,8 @@
 # Library class can containt entities, save and load data about them, execute some statistic methods
 class Library
   include FileLoader
+  include Statistics
+
   attr_reader :authors, :books, :orders, :readers
 
   def initialize
@@ -26,18 +28,6 @@ class Library
         @readers << entity if entity.is_a? Reader
       end
     end
-  end
-
-  def top_readers(quantity = 1)
-    @entities.select { |entity| entity.is_a? Reader }.max_by(quantity) { |reader| reader.books.uniq.length }
-  end
-
-  def top_books(quantity = 1)
-    @entities.select { |entity| entity.is_a? Book }.max_by(quantity) { |book| book.readers.uniq.length }
-  end
-
-  def readers_count_of_popular_books(quantity = 3)
-    top_books(quantity).flat_map(&:readers).uniq.count
   end
 
   private

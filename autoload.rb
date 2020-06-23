@@ -1,5 +1,6 @@
 require_relative 'modules/file_loader'
 require_relative 'modules/validator'
+require_relative 'modules/statistics'
 
 require 'yaml/store'
 require 'date'

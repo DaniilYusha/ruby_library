@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'autoloader'
+require_relative 'autoload'
 
 lib = Library.new
 
