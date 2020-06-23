@@ -7,12 +7,13 @@ class Reader
 
   def initialize(name, email, city, street, house)
     check_empty_strings name, email, city, street
-    
+    check_positive_integers house
+
     @name = name
     @email = email
     @city = city
     @street = street
-    @house = check_positive_num house
+    @house = house
   end
 
   def ==(other)
