@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# FileLoader module save library data to YAML file or load data if file exists
 module FileLoader
   LIB_FILE_NAME = 'lib.yaml'
 
