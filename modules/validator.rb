@@ -12,9 +12,18 @@ module Validator
     end
   end
 
-  def check_empty_strings(*strings)
+  def check_string_class(string)
+    raise ArgumentError, 'Argument should be a String' unless string.is_a?(String)
+  end
+
+  def check_string_emptiness(string)
+    raise ArgumentError, 'String should not be empty' if string.strip.empty?
+  end
+
+  def check_string_class_and_emptiness(*strings)
     strings.each do |string|
-      raise ArgumentError, 'Argument should be String and not empty' if !string.is_a?(String) || string.strip.empty?
+      check_string_class string
+      check_string_emptiness string
     end
   end
 end

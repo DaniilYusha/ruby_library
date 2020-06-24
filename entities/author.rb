@@ -6,7 +6,8 @@ class Author
   attr_reader :name, :biography
 
   def initialize(name, biography = '')
-    check_empty_strings name
+    check_string_class_and_emptiness name
+    check_string_class biography
     @name = name
     @biography = biography
   end
