@@ -5,7 +5,7 @@ class Reader
   include Validator
   attr_reader :name, :email, :city, :street, :house, :books
 
-  def initialize(name, email, city, street, house)
+  def initialize(name:, email:, city:, street:, house:)
     check_string_class_and_emptiness name, email, city, street
     check_positive_integers house
 

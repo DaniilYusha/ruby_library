@@ -15,11 +15,41 @@ book3 = Book.new('The Self-Care Project', author4)
 book4 = Book.new('Passage Meditation', author1)
 book5 = Book.new('Big Magic', author2)
 
-reader1 = Reader.new('Max', 'max@gmail.com', 'Kharkiv', 'Kharkivska st.', 88)
-reader2 = Reader.new('Oleg', 'oleg@gmail.com', 'Kiyv', 'Kiyvska st.', 1)
-reader3 = Reader.new('Ivan', 'ivan@gmail.com', 'Dnipro', 'Dniprovska st.', 39)
-reader4 = Reader.new('Vasya', 'vasya@gmail.com', 'Lviv', 'Lvivska st.', 55)
-reader5 = Reader.new('Nastya', 'nastya@gmail.com', 'Kharkiv', 'Kharkivska st.', 246)
+reader1 = Reader.new(
+  name: 'Max',
+  email: 'max@gmail.com',
+  city: 'Kharkiv',
+  street: 'Kharkivska st.',
+  house: 88
+)
+reader2 = Reader.new(
+  name: 'Oleg',
+  email: 'oleg@gmail.com',
+  city: 'Kiyv',
+  street: 'Kiyvska st.',
+  house: 1
+)
+reader3 = Reader.new(
+  name: 'Ivan',
+  email: 'ivan@gmail.com',
+  city: 'Dnipro',
+  street: 'Dniprovska st.',
+  house: 39
+)
+reader4 = Reader.new(
+  name: 'Vasya',
+  email: 'vasya@gmail.com',
+  city: 'Lviv',
+  street: 'Lvivska st.',
+  house: 55
+)
+reader5 = Reader.new(
+  name: 'Nastya',
+  email: 'nastya@gmail.com',
+  city: 'Kharkiv',
+  street: 'Kharkivska st.',
+  house: 246
+)
 
 order1 = Order.new(book1, reader2)
 order2 = Order.new(book1, reader2)
