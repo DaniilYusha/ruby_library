@@ -38,18 +38,17 @@ lib.add_entities(author1, author2, author3, author4,
                  order1, order2, order3, order4, order5,
                  order6, order7, order8, order9, order10)
 lib.store lib.get_entities
-#
-# puts "Now Library contents #{lib.entities.count} entities."
-# puts '~~~~~~~~~~~STATISTICS~~~~~~~~~~~'
-# puts 'Top reader:'
-# puts lib.top_readers
-# puts "\nThree top readers:"
-# puts lib.top_readers(3)
-# puts "\nMost popular book in the Library:"
-# puts lib.top_books
-# puts "\nTwo most popular books:"
-# puts lib.top_books(2)
-# puts "\nNumber of Readers of the Most Popular Book:"
-# puts lib.readers_count_of_popular_books(1)
-# puts "\nNumber of Readers of three the Most Popular Books:"
-# puts lib.readers_count_of_popular_books
+
+puts '~~~~~~~~~~~STATISTICS~~~~~~~~~~~'
+puts 'Top reader:'
+puts lib.top_readers(lib.orders)
+puts "\nThree top readers:"
+puts lib.top_readers(lib.orders, 3)
+puts "\nMost popular book in the Library:"
+puts lib.top_books(lib.orders)
+puts "\nTwo most popular books:"
+puts lib.top_books(lib.orders, 2)
+puts "\nNumber of Readers of the Most Popular Book:"
+puts lib.readers_count_of_popular_books(lib.orders, 1)
+puts "\nNumber of Readers of three the Most Popular Books:"
+puts lib.readers_count_of_popular_books(lib.orders, 3)
