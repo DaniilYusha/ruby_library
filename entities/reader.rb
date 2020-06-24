@@ -17,9 +17,7 @@ class Reader
   end
 
   def ==(other)
-    return @email == other.email if other.is_a? Reader
-
-    false
+    (other.is_a? Reader) && (@email == other.email)
   end
 
   def to_s

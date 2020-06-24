@@ -13,9 +13,7 @@ class Book
   end
 
   def ==(other)
-    return @title == other.title if other.is_a? Book
-
-    false
+    (other.is_a? Book) && (@title == other.title)
   end
 
   def to_s

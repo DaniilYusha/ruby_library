@@ -13,9 +13,7 @@ class Author
   end
 
   def ==(other)
-    return @name == other.name if other.is_a? Author
-
-    false
+    (other.is_a? Author) && (@name == other.name)
   end
 
   def to_s
