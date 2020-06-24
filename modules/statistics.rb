@@ -13,4 +13,7 @@ module Statistics
     grouped_books.max_by(quantity) { |book, orders| orders.size }.flatten.select { |book| book.is_a? Book }
   end
 
+  def readers_count_of_popular_books(orders, quantity = 3)
+    orders.map { |order| order.reader if top_books(orders, quantity).include? order.book }.compact.uniq.count
+  end
 end
