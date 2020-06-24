@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'modules/file_loader'
 require_relative 'modules/validator'
 require_relative 'modules/statistics'

@@ -37,7 +37,7 @@ lib.add_entities(author1, author2, author3, author4,
                  reader1, reader2, reader3, reader4, reader5,
                  order1, order2, order3, order4, order5,
                  order6, order7, order8, order9, order10)
-lib.store lib.get_entities
+lib.store lib.entities
 
 puts '~~~~~~~~~~~STATISTICS~~~~~~~~~~~'
 puts 'Top reader:'

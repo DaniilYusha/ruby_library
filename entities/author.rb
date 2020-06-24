@@ -7,7 +7,6 @@ class Author
 
   def initialize(name, biography = '')
     check_empty_strings name
-    
     @name = name
     @biography = biography
   end

@@ -15,24 +15,24 @@ class Library
     load
   end
 
-  def get_entities
+  def entities
     (@authors + @books + @orders + @readers).flatten
   end
 
   def add_entities(*entities)
     entities.each do |entity|
-      unless exists_in_lib? entity
-        @authors << entity if entity.is_a? Author
-        @books << entity if entity.is_a? Book
-        @orders << entity if entity.is_a? Order
-        @readers << entity if entity.is_a? Reader
-      end
+      next if exists_in_lib? entity
+
+      @authors << entity if entity.is_a? Author
+      @books << entity if entity.is_a? Book
+      @orders << entity if entity.is_a? Order
+      @readers << entity if entity.is_a? Reader
     end
   end
 
   private
 
   def exists_in_lib?(entity)
-    get_entities.any? { |ent| ent == entity }
+    entities.any? { |ent| ent == entity }
   end
 end

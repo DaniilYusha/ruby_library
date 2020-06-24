@@ -7,8 +7,8 @@ module Validator
   end
 
   def check_positive_integers(*numbers)
-    numbers.each do |number|
-      raise ArgumentError, 'Argument should be a Number and not positive or equal 0' if !number.is_a?(Integer) || number < 1
+    numbers.each do |num|
+      raise ArgumentError, 'Argument should be a Number and not positive or equal 0' if !num.is_a?(Integer) || num < 1
     end
   end
 
